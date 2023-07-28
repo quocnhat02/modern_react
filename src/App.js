@@ -1,11 +1,11 @@
 import './App.css';
-import ProfileCard from './ProfileCard';
+import BrightText from './BrightText';
 
 function App() {
   return (
     <div>
-      <ProfileCard title='Nhat' />
-      <ProfileCard title='Khanh' />
+      <BrightText color='red' />
+      <BrightText color='yellow' />
     </div>
   );
 }
