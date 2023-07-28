@@ -1,7 +1,5 @@
-import React from 'react';
-
-const AnimalShow = () => {
-  return <div>AnimalShow</div>;
+const AnimalShow = ({ type }) => {
+  return <div>{type}</div>;
 };
 
 export default AnimalShow;
