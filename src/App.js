@@ -1,11 +1,13 @@
 import './App.css';
-import BrightText from './BrightText';
 
 function App() {
+  const handleClick = () => {
+    console.log('Button was clicked!');
+  };
+
   return (
     <div>
-      <BrightText color='red' />
-      <BrightText color='yellow' />
+      <button onClick={handleClick}>Add animal</button>
     </div>
   );
 }
