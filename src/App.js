@@ -1,14 +1,10 @@
 import './App.css';
+import ProfileCard from './ProfileCard';
 
 function App() {
   return (
-    <div className='wrapper'>
-      <textarea
-        readOnly={false}
-        maxLength={3}
-        spellCheck
-        style={{ backgroundColor: 'gray' }}
-      />
+    <div>
+      <ProfileCard />
     </div>
   );
 }
