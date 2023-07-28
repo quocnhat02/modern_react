@@ -1,9 +1,11 @@
 import './App.css';
 
 function App() {
+  let name = 'Nhat';
+
   return (
     <div className='App'>
-      <h1>Hello</h1>
+      <h1>Hello, I'm {name}</h1>
     </div>
   );
 }
