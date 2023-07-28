@@ -1,13 +1,7 @@
 import './App.css';
 
 function App() {
-  let name = 'Nhat';
-
-  return (
-    <div className='App'>
-      <h1>Hello, I'm {name}</h1>
-    </div>
-  );
+  return <input type='number' min={7} style={{ color: 'red' }} />;
 }
 
 export default App;
