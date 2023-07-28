@@ -1,7 +1,16 @@
 import './App.css';
 
 function App() {
-  return <input autoFocus type='number' min={7} style={{ color: 'red' }} />;
+  return (
+    <div className='wrapper'>
+      <textarea
+        readOnly={false}
+        maxLength={3}
+        spellCheck
+        style={{ backgroundColor: 'gray' }}
+      />
+    </div>
+  );
 }
 
 export default App;
