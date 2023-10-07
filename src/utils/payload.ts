@@ -17,18 +17,18 @@ type Interaction = {
   errors: InteractionError[];
 };
 
+function convertSpanToBreakdownItem(interactionName: string, span: Span) {
+  return {
+    name: `${interactionName}/${span.name}`,
+    from: span.start,
+    to: span.end,
+  };
+}
+
 const createPayload = (data: Interaction, sendError: boolean) => {
-  const breakdown = [];
-
-  for (let i = 0; i < data.spans.length; i++) {
-    const item = {
-      name: `${data.name}/${data.spans[i].name}`,
-      from: data.spans[i].start,
-      to: data.spans[i].end,
-    };
-
-    breakdown.push(item);
-  }
+  const breakdown = data.spans.map((span) =>
+    convertSpanToBreakdownItem(data.name, span)
+  );
 
   const end = data.end
     ? data.end
