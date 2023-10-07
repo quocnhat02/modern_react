@@ -37,9 +37,12 @@ function translate(item) {
   return letters.includes(item) ? getOffsetLetter(item) : item;
 }
 
+function convertStrToUppercaseArray(input) {
+  return input.toUpperCase().split(separator);
+}
+
 function rot13(str) {
-  const original = str.toUpperCase().split(separator);
-  return original.map(translate).join(separator);
+  return convertStrToUppercaseArray(str).map(translate).join(separator);
 }
 
 console.log(rot13('GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.'));
