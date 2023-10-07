@@ -1,15 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function Heading({ text }: { text: string }) {
-  return <h1>{text}</h1>;
+function Heading({ text, color }: { text: string; color: string }) {
+  return <h1 style={{ color: color }}>{text}</h1>;
 }
 
+type User = {
+  id: number;
+  name: string;
+};
+
 function App() {
+  const [users, setUsers] = useState<User[]>([
+    { id: 1, name: 'Nhat' },
+    { id: 2, name: 'Thuong' },
+    { id: 3, name: 'Duong' },
+  ]);
+
+  const clickHandler = () => {
+    console.log('I am clicked');
+    setUsers([]);
+  };
+
   return (
-    <div className='App'>
-      <Heading text='Hello World' />
+    <div>
+      <Heading text='Hello World' color='green' />
+      <Heading text='My name is LightCodeSE' color='blue' />
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
+      <button onClick={clickHandler}>Click me</button>
     </div>
   );
 }
