@@ -25,23 +25,33 @@ function convertSpanToBreakdownItem(interactionName: string, span: Span) {
   };
 }
 
-const createPayload = (data: Interaction, sendError: boolean) => {
-  const breakdown = data.spans.map((span) =>
-    convertSpanToBreakdownItem(data.name, span)
-  );
+function getLastSpanEndTime(spans: Span[]) {
+  return data.spans.sort((a, b) => b.end - a.end)[0].end;
+}
 
-  const end = data.end
-    ? data.end
-    : data.spans.sort((a, b) => b.end - a.end)[0].end;
+const createPayloadWithoutError = (data: Interaction) => {
+  const { name, spans, start } = data;
+
+  const breakdown = spans.map((span) => convertSpanToBreakdownItem(name, span));
+  const end = data.end ? data.end : getLastSpanEndTime(spans);
 
   return {
     timing: {
-      start: data.start,
+      start: start,
       end,
-      duration: end - data.start,
+      duration: end - start,
     },
     breakdown,
-    errors: sendError ? data.errors : undefined,
+    errors: undefined,
+  };
+};
+
+const createPayloadWithError = (data: Interaction) => {
+  const { errors } = data;
+
+  return {
+    ...createPayloadWithoutError(data),
+    errors,
   };
 };
 
