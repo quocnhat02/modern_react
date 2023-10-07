@@ -25,8 +25,19 @@ function convertSpanToBreakdownItem(interactionName: string, span: Span) {
   };
 }
 
+// function getLastSpanEndTime(spans: Span[]) {
+//   return spans.sort((a, b) => b.end - a.end)[0].end;
+// }
+
+// function getLastSpanEndTime(spans: Span[]) {
+//   return spans.reduce(
+//     (acc, cur) => (acc < cur.end ? cur.end : acc),
+//     spans[0].end
+//   );
+// }
+
 function getLastSpanEndTime(spans: Span[]) {
-  return data.spans.sort((a, b) => b.end - a.end)[0].end;
+  return spans.reduce((acc, cur) => Math.max(acc, cur.end), spans[0].end);
 }
 
 const createPayloadWithoutError = (data: Interaction) => {
