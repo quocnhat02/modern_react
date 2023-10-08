@@ -1,5 +1,7 @@
-const greet = (name, delay) => {
-  setTimeout(() => console.log(`Hi, I am ${name}`), delay);
-};
+const printDelay = (delay) => console.log('Delay: ' + delay);
+const callback = (delay) => setTimeout(() => printDelay(delay), delay);
+const executeCallback = (callback, delay) => callback(delay);
 
-greet('JS', 5000);
+const DELAY = 3000;
+
+executeCallback(callback, DELAY);
