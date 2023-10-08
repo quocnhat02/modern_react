@@ -1,5 +1,5 @@
-const print = (input) => `${input}`;
-const sum = (numbers) => numbers.reduce((acc, cur) => acc + cur, 0);
+const greet = (name, delay) => {
+  setTimeout(() => console.log(`Hi, I am ${name}`), delay);
+};
 
-// console.log(print('Hello World'));
-console.log(sum([1, 2, 3, 4, 5]));
+greet('JS', 5000);
