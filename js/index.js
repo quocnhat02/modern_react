@@ -1,7 +1,26 @@
-const printDelay = (delay) => console.log('Delay: ' + delay);
-const callback = (delay) => setTimeout(() => printDelay(delay), delay);
-const executeCallback = (callback, delay) => callback(delay);
+class Shape {
+  constructor(color) {
+    this.color = color;
+  }
 
-const DELAY = 3000;
+  getColor() {
+    return this.color;
+  }
+}
 
-executeCallback(callback, DELAY);
+class Rectangle extends Shape {
+  constructor(color, width, height) {
+    super(color);
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea() {
+    return this.width * this.height;
+  }
+}
+
+let rectangle = new Rectangle('red', 5, 8);
+
+console.log('Area: ' + rectangle.getArea());
+console.log('Color: ' + rectangle.getColor());
