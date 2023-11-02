@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const Item = ({ name, index, setItems }) => {
   const [modifyOn, setModifyOn] = useState(false);
   const [text, setText] = useState(name);
+  const refInput = useRef();
+
+  useEffect(() => {
+    if (refInput.current) {
+      refInput.current.focus();
+    }
+  }, []);
 
   function remove() {
     setItems((items) => {
@@ -36,7 +43,13 @@ const Item = ({ name, index, setItems }) => {
   return (
     <li style={{ marginTop: '5px' }}>
       {modifyOn ? (
-        <input type='text' value={text} onChange={change} onBlur={blur} />
+        <input
+          type='text'
+          value={text}
+          onChange={change}
+          onBlur={blur}
+          ref={refInput}
+        />
       ) : (
         <span>{name}</span>
       )}{' '}
