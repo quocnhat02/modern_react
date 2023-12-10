@@ -4,6 +4,8 @@ import PostsList from '../../../components/posts/PostsList';
 const PostsListMemoized = React.memo(PostsList);
 
 export default function Home() {
+  console.log('list');
+
   return (
     <div>
       <h1 className='text-red-600'>Home Page</h1>

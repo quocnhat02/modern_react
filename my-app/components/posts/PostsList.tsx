@@ -4,14 +4,12 @@ import usePosts from '@/hooks/usePosts';
 import React from 'react';
 
 const PostsList = () => {
-  const { posts } = usePosts();
-
-  console.log('list');
+  const { posts, isLoading, isError } = usePosts();
 
   return (
     <>
       {posts?.length > 0 &&
-        posts?.map((post) => <li key={post.id}>{post.title}</li>)}
+        posts?.map((post: any) => <li key={post.id}>{post.title}</li>)}
     </>
   );
 };
