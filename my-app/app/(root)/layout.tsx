@@ -9,7 +9,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         <Link href={'/about'}>About</Link>
       </nav>
       <main>{children}</main>
-      <footer>Footer</footer>
+      <footer className='text-red-600'>Footer</footer>
     </div>
   );
 };
