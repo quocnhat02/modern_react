@@ -1,6 +1,6 @@
 'use client';
 
-import usePosts from '@/hooks/usePosts';
+import usePosts from '@/api/usePosts';
 import React from 'react';
 
 const PostsList = () => {
