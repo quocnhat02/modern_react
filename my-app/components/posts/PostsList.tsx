@@ -1,15 +1,11 @@
-'use client';
+import PostCard from './PostCard';
+import { Post } from '@/lib/features/posts/postSlice';
 
-import usePosts from '@/api/usePosts';
-import React from 'react';
-
-const PostsList = () => {
-  const { posts, isLoading, isError } = usePosts();
-
+const PostsList = ({ posts }: { posts: Array<Post> }) => {
   return (
     <>
       {posts?.length > 0 &&
-        posts?.map((post: any) => <li key={post.id}>{post.title}</li>)}
+        posts?.map((post: any) => <PostCard key={post.id} post={post} />)}
     </>
   );
 };
