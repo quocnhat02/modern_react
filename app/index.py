@@ -1,7 +1,4 @@
-number = int(input("Enter your age: "))
-if number < 18:
-    print("Pass")
-elif number < 25:
-    print("Good")
-else:
-    print("Fail")
+number = [1,2,3,4,5]
+
+for num in number:
+    print(num)
