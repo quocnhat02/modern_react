@@ -1,6 +1,12 @@
-file = open("./app/text.txt", 'r')
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-with file:
-    print(file.read())
+    def introduce(self):
+        return f"My name is {self.name} and I'm {self.age} years old."
+    
 
-file.close()
+person = Person("Nhat", 23)
+
+print(person.introduce())
