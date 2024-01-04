@@ -1,12 +1,7 @@
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+from math import sqrt, pi
 
-    def introduce(self):
-        return f"My name is {self.name} and I'm {self.age} years old."
-    
+number = 16
+square_root = sqrt(number)
 
-person = Person("Nhat", 23)
-
-print(person.introduce())
+print(pi)
+print(square_root)
