@@ -1,10 +1,8 @@
 def validate_age(age):
     if (age < 0):
-        raise ValueError("Error: Age cannot be negative")
-    print("Valid age entered")
+        return False
+    return True
 
-try:
-    user_age = int(input("Enter your age: "))
-    validate_age(user_age)
-except ValueError as e:
-    print(e)
+your_age = int(input("Enter your age: "))
+
+print(validate_age(your_age))
