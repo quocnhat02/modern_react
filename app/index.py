@@ -1,8 +1,9 @@
-def validate_age(age):
-    if (age < 0):
-        return False
-    return True
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+    
+result = factorial(5)
 
-your_age = int(input("Enter your age: "))
-
-print(validate_age(your_age))
+print(result)   
