@@ -1,5 +1,6 @@
 file = open("./app/text.txt", 'r')
 
-print(file.read())
+with file:
+    print(file.read())
 
 file.close()
