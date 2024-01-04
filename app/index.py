@@ -1,10 +1,10 @@
+def validate_age(age):
+    if (age < 0):
+        raise ValueError("Error: Age cannot be negative")
+    print("Valid age entered")
+
 try:
-    number = int(input("Enter a number: "))
-    result = 10 / number
-    print(f"Result: {result}")
-except ZeroDivisionError:
-    print("Error: Cannot divide by zero.")
-except ValueError:
-    print("Error: Please enter a valid number.")
-finally:
-    print("Finally")
+    user_age = int(input("Enter your age: "))
+    validate_age(user_age)
+except ValueError as e:
+    print(e)
