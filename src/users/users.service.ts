@@ -8,26 +8,31 @@ export class UsersService {
     {
       id: 1,
       name: 'Nhat 1',
+      email: 'nhat1@gmail.com',
       role: 'INTERN',
     },
     {
       id: 2,
       name: 'Nhat 2',
+      email: 'nhat2@gmail.com',
       role: 'ADMIN',
     },
     {
       id: 3,
       name: 'Nhat 3',
+      email: 'nhat3@gmail.com',
       role: 'ENGINEER',
     },
     {
       id: 4,
       name: 'Nhat 4',
+      email: 'nhat4@gmail.com',
       role: 'ADMIN',
     },
     {
       id: 5,
       name: 'Nhat 5',
+      email: 'nhat5@gmail.com',
       role: 'INTERN',
     },
   ];
