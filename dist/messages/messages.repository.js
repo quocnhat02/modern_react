@@ -2,20 +2,19 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MessagesRepository = void 0;
 const promises_1 = require("fs/promises");
-promises_1.readFile;
 class MessagesRepository {
     async findOne(id) {
-        const contents = await (0, promises_1.readFile)('message.json', 'utf-8');
+        const contents = await (0, promises_1.readFile)('messages.json', 'utf-8');
         const messages = JSON.parse(contents);
         return messages[id];
     }
     async findAll() {
-        const contents = await (0, promises_1.readFile)('message.json', 'utf-8');
+        const contents = await (0, promises_1.readFile)('messages.json', 'utf-8');
         const messages = JSON.parse(contents);
         return messages;
     }
     async create(content) {
-        const contents = await (0, promises_1.readFile)('message.json', 'utf-8');
+        const contents = await (0, promises_1.readFile)('messages.json', 'utf-8');
         const messages = JSON.parse(contents);
         const id = Math.floor(Math.random() * 999);
         messages[id] = { id, content };

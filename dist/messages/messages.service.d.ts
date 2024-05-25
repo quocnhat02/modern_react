@@ -1,5 +1,5 @@
 import { MessagesRepository } from './messages.repository';
-export declare class MessageService {
+export declare class MessagesService {
     _messagesRepo: MessagesRepository;
     constructor();
     findOne(id: string): Promise<any>;
