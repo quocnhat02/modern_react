@@ -1,5 +1,5 @@
 export declare class MessagesRepository {
     findOne(id: string): Promise<any>;
-    findAll(): Promise<void>;
-    create(message: string): Promise<void>;
+    findAll(): Promise<any>;
+    create(content: string): Promise<void>;
 }
