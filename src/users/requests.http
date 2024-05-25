@@ -16,5 +16,13 @@ GET http://localhost:3000/auth?email=nhat@gmail.com
 Content-Type: application/json
 
 ### Delete user with id
-DELETE http://localhost:3000/auth/1
+DELETE http://localhost:3000/auth/2
 Content-Type: application/json
+
+### Update a user with id
+PATCH http://localhost:3000/auth/2
+Content-Type: application/json
+
+{
+    "password": "123456"
+}
