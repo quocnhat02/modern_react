@@ -17,17 +17,17 @@ const common_1 = require("@nestjs/common");
 const create_message_dto_1 = require("./dtos/create-message.dto");
 const messages_service_1 = require("./messages.service");
 let MessagesController = class MessagesController {
-    constructor() {
-        this._messagesService = new messages_service_1.MessagesService();
+    constructor(messagesService) {
+        this.messagesService = messagesService;
     }
     listMessages() {
-        return this._messagesService.findAll();
+        return this.messagesService.findAll();
     }
     createMessage(body) {
-        return this._messagesService.create(body.content);
+        return this.messagesService.create(body.content);
     }
     async getMessage(id) {
-        const message = await this._messagesService.findOne(id);
+        const message = await this.messagesService.findOne(id);
         if (!message) {
             throw new common_1.NotFoundException('message not found');
         }
@@ -57,6 +57,6 @@ __decorate([
 ], MessagesController.prototype, "getMessage", null);
 exports.MessagesController = MessagesController = __decorate([
     (0, common_1.Controller)('messages'),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [messages_service_1.MessagesService])
 ], MessagesController);
 //# sourceMappingURL=messages.controller.js.map
