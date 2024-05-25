@@ -19,7 +19,7 @@ let MessagesController = class MessagesController {
         return 'list messages';
     }
     createMessage(body) {
-        return JSON.stringify(body);
+        return body;
     }
     getMessage(id) {
         return id;

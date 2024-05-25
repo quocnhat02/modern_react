@@ -9,7 +9,7 @@ export class MessagesController {
 
   @Post()
   createMessage(@Body() body: any) {
-    return JSON.stringify(body);
+    return body;
   }
 
   @Get('/:id')
